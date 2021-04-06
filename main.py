@@ -21,16 +21,16 @@ class Board:
         else:
             self.board[x, y] = player
 
+    ### DISPLAY
     def display(self):
         for item in self.board:
             for second_item in item:
                 if second_item == 0:
-                    print("[ ]", end="")
+                    yield "[ ]"
                 if second_item == 1:
-                    print("[X]", end="")
+                    yield "[X]"
                 if second_item == 2:
-                    print("[O]", end="")
-            print()
+                    yield "[O]"
 
     def reset(self):
         self.board = np.zeros((3, 3))
@@ -45,4 +45,9 @@ board.insert(
 )
 
 board.insert(x=2, y=2, player=2)
-board.display()
+# Loop
+# Display
+for count, item in enumerate(board.display(), 1):
+    print(item, end="")
+    if count % 3 == 0:
+        print()
