@@ -1,6 +1,7 @@
 import numpy as np
 
 
+## BOARD
 class Board:
     def __init__(self):
         self.board = np.zeros((3, 3))
@@ -35,11 +36,13 @@ class Board:
         self.board = np.zeros((3, 3))
 
 
+## GAME
 board = Board()
 board.insert(
     x=1,
     y=2,
     player=1,
 )
+
 board.insert(x=2, y=2, player=2)
 board.display()
