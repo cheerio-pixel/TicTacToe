@@ -1,14 +1,16 @@
 import numpy as np
 
+from collections import deque
 
 ## BOARD
 class Board:
     def __init__(self):
         self.board = np.zeros((3, 3))
 
-    def insert(self, x, y, player):
-        x -= 1
-        y -= 1
+    ### INSERT
+    def insert(self, coords, player):
+        x -= coords[0]
+        y -= coords[1]
         if not 0 == self.board[x, y]:
             print("Occupied")
             return
@@ -51,3 +53,15 @@ for count, item in enumerate(board.display(), 1):
     print(item, end="")
     if count % 3 == 0:
         print()
+# Ask for input
+
+while True:
+    try:
+        prompt = list(map(int, input("Put in: ").split(" ")))
+        if len(prompt) != 2:
+            print("Input needs to be exactly 2 long")
+            raise Exception
+    except:
+        print("Invalid input")
+    else:
+        break
