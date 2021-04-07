@@ -42,31 +42,26 @@ class Board:
 # GAME
 
 board = Board()
+turn = deque([1, 2])
 
-## Examples
-board.insert(
-    x=1,
-    y=2,
-    player=1,
-)
-
-board.insert(x=2, y=2, player=2)
 # LOOP
-## Display
-for count, item in enumerate(board.display(), 1):
-    print(item, end="")
-    if count % 3 == 0:
-        print()
-## Ask for Input
 while True:
-    try:
-        ### Check the input
-        prompt = list(map(int, input("Put in: ").split(" ")))
-        if len(prompt) != 2:
-            print("Input needs to be exactly 2 long")
-            raise Exception
-    except:
-        print("Invalid input")
-    else:
-        break
-## Insert Input
+    ## Display
+    for count, item in enumerate(board.display(), 1):
+        print(item, end="")
+        if count % 3 == 0:
+            print()
+    ## Ask for Input
+    while True:
+        try:
+            ### Check the input
+            prompt = list(map(int, input("Put in: ").split(" ")))
+            if len(prompt) != 2:
+                print("Input needs to be exactly 2 long")
+                raise Exception
+        except:
+            print("Invalid input")
+        else:
+            break
+    ## Insert Input
+    board.insert(prompt, turn[0])
