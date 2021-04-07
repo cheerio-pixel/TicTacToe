@@ -2,12 +2,12 @@ import numpy as np
 
 from collections import deque
 
-## BOARD
+# BOARD
 class Board:
     def __init__(self):
         self.board = np.zeros((3, 3))
 
-    ### INSERT
+    ## Insert
     def insert(self, coords, player):
         x -= coords[0]
         y -= coords[1]
@@ -23,7 +23,7 @@ class Board:
         else:
             self.board[x, y] = player
 
-    ### DISPLAY
+    ## Display
     def display(self):
         for item in self.board:
             for second_item in item:
@@ -34,12 +34,16 @@ class Board:
                 if second_item == 2:
                     yield "[O]"
 
+    ## Reset
     def reset(self):
         self.board = np.zeros((3, 3))
 
 
-## GAME
+# GAME
+
 board = Board()
+
+## Examples
 board.insert(
     x=1,
     y=2,
@@ -47,16 +51,16 @@ board.insert(
 )
 
 board.insert(x=2, y=2, player=2)
-# Loop
-# Display
+# LOOP
+## Display
 for count, item in enumerate(board.display(), 1):
     print(item, end="")
     if count % 3 == 0:
         print()
-# Ask for input
-
+## Ask for Input
 while True:
     try:
+        ### Check the input
         prompt = list(map(int, input("Put in: ").split(" ")))
         if len(prompt) != 2:
             print("Input needs to be exactly 2 long")
@@ -65,3 +69,4 @@ while True:
         print("Invalid input")
     else:
         break
+## Input
