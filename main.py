@@ -49,13 +49,10 @@ while True:
             if len(prompt) != 2:
                 print("Input needs to be exactly 2 long")
                 raise Exception
-            if not 0 == self.board[x, y]:
+            if not 0 == board.board[prompt[0], prompt[1]]:
                 print("Occupied")
                 raise Exception
-            if player != 1 and player != 2:
-                print("Invalid player")
-                raise Exception
-            if 0 > x > 2 or 0 > y > 2:
+            if 0 > prompt[0] > 2 or 0 > prompt[1] > 2:
                 print("Invalid coordinate")
                 raise Exception
         except:
