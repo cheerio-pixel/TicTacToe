@@ -11,17 +11,7 @@ class Board:
     def insert(self, coords, player):
         x -= coords[0]
         y -= coords[1]
-        if not 0 == self.board[x, y]:
-            print("Occupied")
-            return
-        if player != 1 and player != 2:
-            print("Invalid player")
-            return
-        if 0 > x > 2 or 0 > y > 2:
-            print("Invalid coordinate")
-            return
-        else:
-            self.board[x, y] = player
+        self.board[x, y] = player
 
     ## Display
     def display(self):
@@ -58,6 +48,15 @@ while True:
             prompt = list(map(int, input("Put in: ").split(" ")))
             if len(prompt) != 2:
                 print("Input needs to be exactly 2 long")
+                raise Exception
+            if not 0 == self.board[x, y]:
+                print("Occupied")
+                raise Exception
+            if player != 1 and player != 2:
+                print("Invalid player")
+                raise Exception
+            if 0 > x > 2 or 0 > y > 2:
+                print("Invalid coordinate")
                 raise Exception
         except:
             print("Invalid input")
