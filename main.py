@@ -36,14 +36,15 @@ class Board:
         # The top left to the bottom right
         diagonal_one = np.trace(self.board) / 3
         diagonal_two = np.trace(self.board[::-1]) / 3
-        for item in self.board:
+        for count, item in enumerate(self.board):
             # Fix for cases when 1 1 is 1 and 1 2 is two
             rows = item.sum() / 3
-            columns = item.sum(axis=0) / 3
+            board = self.board
+            columns = board[:, count].sum() / 3
             if not item.prod() == 0:
                 if rows == 1.0 or rows == 2.0:
                     return True
-            if not item.prod(axis=0) == 0:
+            if not board[:, count].prod(axis=0) == 0:
                 if columns == 1.0 or columns == 2.0:
                     return True
         if not np.diag(self.board).prod() == 0:
