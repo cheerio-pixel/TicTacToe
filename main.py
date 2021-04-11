@@ -63,14 +63,14 @@ class Board:
 
 
 def end_game():
-    comfirmation = input("Want to continue?([y]es or [n]o): ").lower()
+    comfirmation = input("Want to repeat?([y]es or [n]o): ").lower()
     while (
         comfirmation != "yes"
         and comfirmation != "no"
         and comfirmation != "y"
         and comfirmation != "n"
     ):
-        comfirmation = input("Want to continue?([y]es or [n]o): ").lower()
+        comfirmation = input("Want to repeat?([y]es or [n]o): ").lower()
     if comfirmation == "yes" or comfirmation == "y":
         board.reset()
         # So the player always start first
