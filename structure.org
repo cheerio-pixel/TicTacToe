@@ -1,0 +1,47 @@
+#+STARTUP: content
+
+* Structure
+** Sentence
+Tic Tac Toe is a game in which two PLAYERS: O and X, mark the spaces
+in a BOARD that is 3x3 alternately.
+One player wins
+*** Words
+Players: O and X
+Board: 3x3 Spaces
+Game: Loop until won or draw
+** Flow
+*** Init
+**** Create blank 3x3 board
+**** Create players O and X
+*** Loop
+**** Wait for input
+**** Modify Board
+**** Make the players check if they won
+**** Make the game check if one player won
+**** LOOP
+** Objects
+*** Turn
+**** Has
+***** list -> List
+***** point -> Int
+*** Board
+**** Has
+***** list -> List
+***** Dimensions -> List -> Int
+*** Player
+**** Has
+***** Symbol -> String
+*** Game
+**** Requires
+***** Turn
+****** Holds Players
+***** Board
+** Requirements
+*** Can use Mouse and Keyboard
+*** Have a gui and a terminal interface
+** Layers
+*** Gui
+*** Logic
+**** Game
+**** Board
+**** Player

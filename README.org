@@ -1,0 +1,8 @@
+* Requirements
+Python 3
+Numpy
+Pygame
+* Installation
+Clone this repository and run
+
+=python /path/to/TicTacToe.py=
