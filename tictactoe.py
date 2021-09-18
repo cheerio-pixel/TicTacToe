@@ -117,11 +117,7 @@ class Board:
             is_win = True
         return False
 
-    def check_left_diag(self, symbol):
-        pass
 
-    def check_rigth_diag(self, symbol):
-        pass
 
     def win(self, symbol):
         pass
