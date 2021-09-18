@@ -1,6 +1,5 @@
 # * Imports
 
-from types import ClassMethodDescriptorType
 import pygame
 import math
 
