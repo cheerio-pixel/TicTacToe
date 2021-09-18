@@ -134,7 +134,16 @@ class Board:
         )
 
     def win(self, symbol):
-        pass
+        return (
+            self.check_diag(symbol, False)
+            or self.check_diag(symbol, True)
+            or self.check_lines(
+                symbol, False, self.get_dimensions(), self.get_board()
+            )
+            or self.check_lines(
+                symbol, True, self.get_dimensions(), self.get_board()
+            )
+        )
 
 
 class Player:
