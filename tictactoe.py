@@ -94,18 +94,26 @@ class Board:
         self.set_board(Board.empty_board(self.dimensions))
 
     # Check if win
-    def check_lines(self, symbol: str, is_vertical: bool):
-        board = self.get_board()
-        dimensions = self.get_dimensions()
+    def check_lines(
+        self, symbol: str, is_vertical: bool, sdimensions: list, sboard: list
+    ):
+        board = sboard
+        dimensions = sdimensions
         is_win = True
         for y in range(0, dimensions[0]):
             for x in range(1, dimensions[1]):
-                if symbol != board[self.coords_to_index(y, x)
-                                   if is_vertical
-                                   else self.coords_to_index(x, y)]:
+                if (
+                    symbol
+                    != board[
+                        self.coords_to_index(y, x)
+                        if is_vertical
+                        else self.coords_to_index(x, y)
+                    ]
+                ):
                     is_win = False
                     break
-            if is_win: return is_win
+            if is_win:
+                return is_win
             is_win = True
         return False
 
