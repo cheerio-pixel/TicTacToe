@@ -117,7 +117,21 @@ class Board:
             is_win = True
         return False
 
+    def get_diag(self, board):
+        return [
+            board[self.coords_to_index(i, i)]
+            for i in range(self.get_dimensions()[0])
+        ]
 
+    def check_diag(self, symbol: str, reverse: bool):
+        return self.check_lines(
+            symbol,
+            False,
+            [0, 1],
+            self.get_diag(self.get_board()[::-1])
+            if reverse
+            else self.get_diag(self.get_board()),
+        )
 
     def win(self, symbol):
         pass
