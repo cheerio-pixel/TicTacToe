@@ -48,7 +48,7 @@ class Board:
         self.dimensions = dimensions
         self.clear_board()
 
-    def set_board(self, board):
+    def set_board(self, board: list):
         self.board = board
 
     def get_board(self):
@@ -64,7 +64,7 @@ class Board:
             final.append(0)
         return final
 
-    def coords_to_index(self, x, y):
+    def coords_to_index(self, x: int, y: int):
         x, y = x - 1, y - 1
         return x + self.get_dimensions()[0] * y
 
@@ -133,7 +133,7 @@ class Board:
             else self.get_diag(self.get_board()),
         )
 
-    def win(self, symbol):
+    def win(self, symbol: str):
         return (
             self.check_diag(symbol, False)
             or self.check_diag(symbol, True)
