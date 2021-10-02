@@ -7,11 +7,10 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
-pygame = "^2.0.1"
+pyglet = "^1.5.21"
 
 
 [tool.poetry.dev-dependencies]
-ipython = "^7.27.0"
 debugpy = "^1.4.3"
 
 [build-system]
