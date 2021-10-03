@@ -22,20 +22,49 @@ Game: Loop until won or draw
 ** Objects
 *** Turn
 **** Has
-***** list -> List
+***** turn list -> List
 ***** point -> Int
+**** Functions
+***** Enqueue
+***** Next
+***** Get(current)
 *** Board
 **** Has
-***** list -> List
-***** Dimensions -> List -> Int
+***** 2D list 3x3 -> List
+**** Functions
+***** Win
+**** Helper Functions
+***** Get diag
+***** Check line
 *** Player
 **** Has
 ***** Symbol -> String
-*** Game
+*** Game(abstract)
 **** Requires
 ***** Turn
-****** Holds Players
 ***** Board
+**** Functions
+***** Play
+Get turn(player)
+Ask input(from interface)
+Insert input
+Check win
+Next turn
+LOOP
+** Interface Pyglet - Pyglet game
+*** [0/6] What i need
+**** TODO Nice Window
+**** TODO Integration with the loop of class Game
+**** TODO Fixed 3x3 Squares
+With nice receptors that notify where an action happened
+**** TODO Nice input handling
+***** Mouse and keyboard layers
+A structure where Mouse and Keyboard return the input the same
+First keyboard
+When Ilegal inputs, do a re-try
+**** TODO Nice game state reading
+plug pyglet.window.Window.on_draw()
+**** TODO 
 ** Requirements
 *** Can use Mouse and Keyboard
 *** Have a gui and a terminal interface
